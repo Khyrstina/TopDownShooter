@@ -19,9 +19,10 @@ namespace WitchFight
         bool goright; //allows player to go right
         string facing = "up"; // this is used later to guide bullets
         double playerHealth = 100; // player health
+        int heart = 0;//hearts start at zero
         int speed = 10; // this is player speed
         int ammo = 20; // starting amount of ammo
-        int zombieSpeed = 2; // how fast the enemies move
+        int zombieSpeed = 1; // how fast the enemies move
         int score = 0; // how many "kills" player has accumulated
         bool gameOver = false; // false = game keeps going, true = game is finished
         Random rnd = new Random(); // random number generation
@@ -138,9 +139,13 @@ namespace WitchFight
             label2.Text = "Kills: " + score; // show the total kills on the score
 
             // if the player health is less than 20
-            if (playerHealth < 20)
+            if (playerHealth > 50)
                 {
-                progressBar1.ForeColor = System.Drawing.Color.Red; // change the progress bar colour to red. 
+                progressBar1.ForeColor = System.Drawing.Color.Green; // change the progress bar colour to red. 
+                }
+            else
+                {
+                progressBar1.ForeColor = System.Drawing.Color.DarkRed;
                 }
 
             if (goleft && player.Left > 0)
@@ -174,6 +179,18 @@ namespace WitchFight
             foreach (Control x in this.Controls)
                 {
                 // if the X is a picture box and X has a tag AMMO
+                if (x is PictureBox && x.Tag == "heart")
+                    {
+                    if (((PictureBox)x).Bounds.IntersectsWith(player.Bounds))
+                        {
+                        // once the player picks up the heart
+
+                        this.Controls.Remove(((PictureBox)x)); // remove the heart picture box
+
+                        ((PictureBox)x).Dispose(); // dispose the picture box completely from the program
+                        playerHealth += 5; // add 5 health to the integer
+                        }
+                    }
 
                 if (x is PictureBox && x.Tag == "ammo")
                     {
@@ -283,7 +300,18 @@ namespace WitchFight
             ammo.BringToFront(); // bring it to front
             player.BringToFront(); // bring the player to front
             }
-
+        private void DropLife()
+            {
+            PictureBox heart = new PictureBox();
+            heart.Image = Properties.Resources.heart;
+            heart.SizeMode = PictureBoxSizeMode.AutoSize;
+            heart.Left = rnd.Next(10, 890);
+            heart.Top = rnd.Next(50, 600);
+            heart.Tag = "heart";
+            this.Controls.Add(heart);
+            heart.BringToFront();
+            player.BringToFront();
+            }
         private void shoot(string direct)
             {
             // this is the function thats makes the new bullets in this game

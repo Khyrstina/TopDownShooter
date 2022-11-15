@@ -20,7 +20,7 @@ namespace WitchFight
 
         public void mkBullet(Form form)
             {
-            Bullet.BackColor = System.Drawing.Color.White;
+            Bullet.BackColor = System.Drawing.Color.LimeGreen;
             Bullet.Size = new Size(5, 5);
             Bullet.Tag = "bullet";
             Bullet.Left = bulletLeft;

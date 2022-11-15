@@ -132,5 +132,26 @@
   <ItemGroup>
     <None Include="Resources\zup.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heartforgame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dead.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tile004.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
