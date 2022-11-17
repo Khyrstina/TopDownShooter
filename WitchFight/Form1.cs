@@ -24,7 +24,7 @@ namespace WitchFight
         int speed = 10; // this is player speed
         int ammo = 20; // starting amount of ammo
         int zombieSpeed = 1; // how fast the enemies move
-        int score = 0; // how many "kills" player has accumulated
+        public static int score = 0; // how many "kills" player has accumulated
         bool gameOver = false; // false = game keeps going, true = game is finished
         Random rnd = new Random(); // random number generation
 
@@ -34,7 +34,6 @@ namespace WitchFight
             InitializeComponent();
             button1.Enabled = false;
             button1.Visible = false;
-            Thread.Sleep(2000);
             }
 
         private void keyisdown(object sender, KeyEventArgs e)
@@ -80,7 +79,7 @@ namespace WitchFight
 
             }
 
-        private void keyisup(object sender, KeyEventArgs e)
+        public void keyisup(object sender, KeyEventArgs e)
             {
             if (gameOver) return; // only do this if gamover is false
 
@@ -117,12 +116,22 @@ namespace WitchFight
                     {
                     DropAmmo(); // invoke the drop ammo function
                     }
+
+                if (score % 5 == 0)
+                    {
+                    DropLife();
+                    }
                 }
             }
 
-        private void gameEngine(object sender, EventArgs e)
+        public void gameEngine(object sender, EventArgs e)
             {
-            if (playerHealth > 1) // if player health is greater than 1
+            if (playerHealth > 100) // if player health is greater than 1
+                {
+                playerHealth = 100;
+                progressBar1.Value = Convert.ToInt32(playerHealth); // assign the progress bar to the player health integer
+                }
+            else if (playerHealth > 1)
                 {
                 progressBar1.Value = Convert.ToInt32(playerHealth); // assign the progress bar to the player health integer
                 }
@@ -137,7 +146,7 @@ namespace WitchFight
                 button1.BringToFront();
                 }
 
-            label1.Text = "   Ammo:  " + ammo; // show the ammo amount on label 1
+            label1.Text = "   Mana:  " + ammo; // show the ammo amount on label 1
             label2.Text = "Kills: " + score; // show the total kills on the score
 
             // if the player health is less than 20
@@ -190,7 +199,7 @@ namespace WitchFight
                         this.Controls.Remove(((PictureBox)x)); // remove the heart picture box
 
                         ((PictureBox)x).Dispose(); // dispose the picture box completely from the program
-                        playerHealth += 5; // add 5 health to the integer
+                        playerHealth += 10; // add 5 health to the integer
                         }
                     }
 
@@ -288,7 +297,7 @@ namespace WitchFight
                 }
             }
 
-        private void DropAmmo()
+        public void DropAmmo()
             {
             // this function will make a ammo image for this game
 
@@ -313,8 +322,10 @@ namespace WitchFight
             this.Controls.Add(heart);
             heart.BringToFront();
             player.BringToFront();
+
             }
-        private void shoot(string direct)
+
+        public void shoot(string direct)
             {
             // this is the function thats makes the new bullets in this game
 
@@ -325,7 +336,7 @@ namespace WitchFight
             shoot.mkBullet(this); // run the function mkBullet from the bullet class. 
             }
 
-        private void makeZombies()
+        public void makeZombies()
             {
             // when this function is called it will make zombies in the game
 
@@ -343,5 +354,6 @@ namespace WitchFight
             {
             Application.Restart(); //Temporary fix for starting game over
             }
+
         }
     }

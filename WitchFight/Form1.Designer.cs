@@ -66,6 +66,7 @@
             this.label2.Size = new System.Drawing.Size(84, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Kills: 0";
+            //this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -90,7 +91,7 @@
             this.pictureBox1.Image = global::WitchFight.Properties.Resources.zdown;
             this.pictureBox1.Location = new System.Drawing.Point(114, 123);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 71);
+            this.pictureBox1.Size = new System.Drawing.Size(64, 63);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -101,7 +102,7 @@
             this.player.Image = global::WitchFight.Properties.Resources.up;
             this.player.Location = new System.Drawing.Point(473, 307);
             this.player.Name = "player";
-            this.player.Size = new System.Drawing.Size(71, 100);
+            this.player.Size = new System.Drawing.Size(64, 65);
             this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.player.TabIndex = 5;
             this.player.TabStop = false;
@@ -111,7 +112,7 @@
             this.pictureBox3.Image = global::WitchFight.Properties.Resources.zdown;
             this.pictureBox3.Location = new System.Drawing.Point(778, 123);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(71, 71);
+            this.pictureBox3.Size = new System.Drawing.Size(64, 63);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
@@ -122,7 +123,7 @@
             this.pictureBox4.Image = global::WitchFight.Properties.Resources.zup;
             this.pictureBox4.Location = new System.Drawing.Point(473, 564);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(71, 71);
+            this.pictureBox4.Size = new System.Drawing.Size(64, 63);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
