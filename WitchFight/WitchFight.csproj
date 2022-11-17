@@ -153,5 +153,23 @@
   <ItemGroup>
     <None Include="Resources\tile004.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zup.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zleft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zdown.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zright.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ammo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ammo_image.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

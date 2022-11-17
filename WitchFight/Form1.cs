@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
  
 namespace WitchFight
@@ -33,6 +34,7 @@ namespace WitchFight
             InitializeComponent();
             button1.Enabled = false;
             button1.Visible = false;
+            Thread.Sleep(2000);
             }
 
         private void keyisdown(object sender, KeyEventArgs e)
@@ -291,7 +293,7 @@ namespace WitchFight
             // this function will make a ammo image for this game
 
             PictureBox ammo = new PictureBox(); // create a new instance of the picture box
-            ammo.Image = Properties.Resources.ammo_Image; // assignment the ammo image to the picture box
+            ammo.Image = Properties.Resources.ammo_image; // assignment the ammo image to the picture box
             ammo.SizeMode = PictureBoxSizeMode.AutoSize; // set the size to auto size
             ammo.Left = rnd.Next(10, 890); // set the location to a random left
             ammo.Top = rnd.Next(50, 600); // set the location to a random top

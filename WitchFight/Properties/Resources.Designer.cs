@@ -63,9 +63,9 @@ namespace WitchFight.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ammo_Image {
+        internal static System.Drawing.Bitmap ammo_image {
             get {
-                object obj = ResourceManager.GetObject("ammo_Image", resourceCulture);
+                object obj = ResourceManager.GetObject("ammo_image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
