@@ -11,7 +11,7 @@ namespace WitchFight
     internal class bullet
         {
         public string direction;
-        public int speed = 20;
+        public int speed = 22;
         PictureBox Bullet = new PictureBox();
         Timer tm = new Timer();
 
